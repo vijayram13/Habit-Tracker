@@ -1,0 +1,84 @@
+#main-box {
+    height: auto !important;
+  }
+  /* hide signout btn */
+  #user{
+    display: none
+  }
+
+  
+  #habit {
+    display: none !important;
+  }
+  
+  a{
+    text-decoration: none;
+  }
+  
+  
+
+  
+  .input_container {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .icon {
+    width: 20px;
+    position: absolute;
+    z-index: 99;
+    left: 10px;
+    bottom: 9px;
+  }
+  
+  
+  
+ 
+  /* check box */
+  .form-check-input:checked {
+    background-color: #fd7e14;
+    border-color: #fd7e14;
+  }
+  .form-check-input:focus {
+    border-color: rgb(253, 126, 20);
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgba(253, 125, 20, 0.516);
+  }
+  
+  .input_label {
+    font-size: 0.9rem;
+    color: #8B8E98;
+    font-weight: 600;
+  }
+  
+  .input_field {
+    width: auto;
+    height: 40px;
+    
+    padding: 0 0 0 40px;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid #c8c6c6;
+    filter: drop-shadow(0px 1px 0px #efefef)
+      drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
+    transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
+  }
+  
+  .input_field:focus {
+    border: 0.2px solid transparent;
+    box-shadow: 0px 0px 0px 2px #92918f;
+    background-color: transparent;
+  }
+  
+  
+  .icon {
+    width: 20px;
+    position: absolute;
+    z-index: 99;
+    left: 10px;
+    bottom: 9px;
+  }

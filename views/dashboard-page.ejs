@@ -1,0 +1,147 @@
+<link rel="stylesheet" href="/css/dashboardPage.css" type="text/css">
+<script src="/js/dashboard.js"></script>
+
+<!-- header -->
+<div class="container-fluid sticky-top bg-light">
+    <div class="row">
+        <nav class="navbar sticky-top border-bottom border-2 border-dark">
+            <!-- Title with logo -->
+            <a class="navbar-brand">
+
+                <div class="d-flex align-items-center  pb-1">
+                    <i class="fas fa-cubes fa-2x ms-3" style="color: #ff6219;"></i>
+                    <span class="h3 fw-bold ">Habit Tracker</span>
+                  </div>
+            </a>
+
+            <!-- user name and signout -->
+            <div class="navbar-brand fs-6 ">
+                <span class ="h6 me-2" style="color: #ff6219;"><%= user.name %></span> 
+                <div class="vr"></div>
+                <a class="navbar-brand fs-6 ms-2" href="/HabitTracker/signout" id="change"><strong>Signout</strong></a>
+            </div>
+
+    </div>
+    </nav>
+</div>
+<!-- body -->
+<div class="container mt-2">
+    <div class="scrollable">
+
+        <div class="row justify-content-center">
+            <div class="col-11">
+                <!-- date and add button -->
+                <div class="row mb-2">
+
+                    <!-- date -->
+                    <div class="col">
+                        <h1 style="font-family: 'Courier New', monospace; color: #ff6219; margin-bottom: 0rem; letter-spacing: 6px;">
+                            <strong><%= days[6] %>day</strong>
+                        </h1>
+                        <h5 style="font-family: 'Courier New', monospace;"><strong><%= date %></strong></h5>
+                       
+                    </div>
+                    
+                    <!-- Add habit form -->
+                    <div class="col">
+                        <form class="d-flex m-auto " role="search" id="add_habit"
+                            action="/HabitTracker/<%=user.id%>/add-habit" method="POST">
+                            
+                            <input class="form-control me-1 " type="search" placeholder="add habit" id="input"
+                                name="name" aria-label="Search" required>
+                            <button class="btn btn-success" type="submit">ADD</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="accordion" id="accordionPanelsStayOpenExample">
+                    
+                    <!-- if list is empty -->
+                    <% if (habits.length<1) {%>
+                        <h5 id="empty">Add your habit</h5>
+                    <%}else{%>
+                        
+                        <!-- for loop each habit-->
+                        <% habits.forEach((habit)=>{%>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-<%= habit.id %>" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseOne" id="<%= habit.id %>">
+                                        <h6><%= habit.habit_name %></h6>
+                                    </button>
+                                </h2>
+                                <div id="panelsStayOpen-<%= habit.id %>" class="accordion-collapse collapse">
+                                    <div class="accordion-body" style="background-color: #f3aa8880">
+
+                                        <div class="row text-center">
+                                            
+                                            <%for (let index=0; index < days.length; index++) {%>
+                                                    
+
+                                                    <div class="col" >
+                                                        <div>
+                                                            
+                                                                <h5  style="font-family: 'Courier New', monospace; color: #f45003; margin-bottom: 0rem;">
+                                                                    <strong ><%= days[index] %></strong>
+                                                                </h5>
+                                                            
+                                                                <form class="outerItem" action="/HabitTracker/<%= habit.id %>/update?itemId=<%= index %>" method="get" id="<%= habit.days[index].id %>">
+                                                                    <select class="form-select form-select-sm"
+                                                                        aria-label="Small select example" >
+                                                                        <% if (habit.days[index].status == "not done") {%>
+                                                                            <option value="<%= habit.days[index].status %>">
+                                                                                <%= habit.days[index].status %>
+                                                                            </option>
+                                                                            <option value="none">none</option>
+                                                                            <option value="done">done</option>
+        
+                                                                        <%} else if (habit.days[index].status == "done") {%>
+                                                                            <option selected value="<%= habit.days[index].status %>">
+                                                                                <%= habit.days[index].status %>
+                                                                            </option>
+                                                                            <option value="none">none</option>
+                                                                            <option value="not done">not done</option>
+                                                                        <% } else {%> 
+                                                                            <option selected value="<%= habit.days[index].status %>">
+                                                                                <%= habit.days[index].status %>
+                                                                            </option>
+                                                                            <option value="done">done</option>
+                                                                            <option value="not done">not done</option>
+                                                                            
+                                                                        <%}%>
+        
+                                                                    </select>
+                                                                    
+                                                                </form>
+
+                                                        </div>
+
+                                                    </div>
+
+                                                    <%}%>
+
+
+
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <%})%>
+
+                    <%}%>
+
+
+                    </div>
+                    
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>

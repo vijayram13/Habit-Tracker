@@ -1,0 +1,66 @@
+
+<link rel="stylesheet" href="/css/signupPage.css" type="text/css">
+<script type="text/javascript" src="/js/signupPage.js"></script>
+
+<section class="vh-100" style="background-color: #9A616D;">
+    <div class="container  h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col col-xl-10">
+          <div class="card" style="border-radius: 1rem;">
+            <div class="row g-0">
+              <div class="col-md-6 col-lg-5 d-none d-md-block">
+                <img src="https://img.freepik.com/free-vector/healthy-habit-concept-illustration_114360-1132.jpg?w=826&t=st=1692355236~exp=1692355836~hmac=ab06b1f78508e9a108e783a18d10c6a9951be84d98cfee96d22aaba872a81230"
+                  alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+              </div>
+              <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                <div class="card-body p-4 p-lg-5 text-black">
+  
+                  <form method="post" action="/HabitTracker/createUser">
+  
+                    <div class="d-flex align-items-center mb-2 pb-1">
+                      <i class="fas fa-cubes fa-2x me-3" style="color: #ff6219;"></i>
+                      <span class="h1 fw-bold mb-0">Habit Tracker</span>
+                    </div>
+  
+                    <h5 class="fw-normal mb-2 pb-3" style="letter-spacing: 1px;">Create your account</h5>
+                    <div class="form-outline mb-2">
+                        <input type="text" id="user_name" class="form-control form-control-lg" name="name" required/>
+                        <label class="form-label" for="user_name">Name</label>
+                    </div>
+  
+                    <div class="form-outline mb-2">
+                      <input type="email" id="user_email" class="form-control form-control-lg" name="email" required/>
+                      <label class="form-label" for="user_email">Email address</label>
+                    </div>
+  
+                    <div class="form-outline mb-2">
+                      <input type="password" id="user_password" class="form-control form-control-lg" name="password" required/>
+                      <label class="form-label" for="user_password">Password</label>
+                    </div>
+
+                    <div class="form-outline mb-2">
+                        <input type="password" id="conf_password" class="form-control form-control-lg" name="confirm_password" required/>
+                        <label class="form-label" for="conf_password">Confirm Password</label>
+                    </div>
+
+                    <div class="form-check mb-3 ">
+                      <input class="form-check-input" type="checkbox" value="" id="showPassword">
+                      <label class="form-check-label" for="showPassword">Show Password</label>
+                    </div>
+        
+  
+                    <div class="pt-1 mb-2">
+                      <button class="btn btn-dark btn-lg btn-block" type="submit">Submit</button>
+                    </div>
+  
+                    
+                  </form>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

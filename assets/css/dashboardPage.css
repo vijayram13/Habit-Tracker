@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+
+}
+
+
+/* check box */
+.form-check-input:checked {
+  background-color: #fd7e14;
+  border-color: #fd7e14;
+}
+
+.form-check-input:focus {
+  border-color: rgb(253, 126, 20);
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgba(253, 125, 20, 0.516);
+}
+
+.accordion-button:not(.collapsed) {
+  color: var(--bs-accordion-active-color);
+  background-color: #ff6219;
+  box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--bs-accordion-border-color);
+}
+
+.accordion-button:focus {
+  z-index: 3;
+  border-color: white;
+  box-shadow: 0 0 0 0.15rem rgba(240, 237, 232, 0.87);
+}
+
+.form-control {
+  border: var(--bs-border-width) solid green;
+}
+
+.form-control:focus {
+  
+  border-color: rgba(25, 247, 5, 0.61);
+
+  box-shadow: 00 0 0 0.15rem rgba(6, 56, 2, 0.61)
+}
