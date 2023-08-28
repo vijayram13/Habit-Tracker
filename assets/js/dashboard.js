@@ -2,7 +2,17 @@
 $(document).ready(function () {
     const currentUrl = window.location.href;
     const parts = currentUrl.split("/");
+    // today's date
+    const date = new Date();
+    
 
+    // weekday
+    const weekday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+    const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September","October", "November", "December"];
+
+    $("#weekday").text(weekday[date.getDay()]);
+    $("#t_date").text(`${date.getDate()} ${month[date.getMonth()]} ${date.getFullYear()}`);
+    
     // to show or hide password
     $("#showPassword").click(function () {
         const passwordInput = $("#user_password");
